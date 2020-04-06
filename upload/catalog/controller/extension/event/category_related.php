@@ -1,6 +1,6 @@
 <?php
 
-class ControllerEventCategoryRelated extends Controller {
+class controllerExtensionEventCategoryRelated extends Controller {
     public function productRelated(&$route, &$data = array(), &$output = '') {
         // check if this module is enabled
         if(!$this->config->get('module_category_related_status')) {

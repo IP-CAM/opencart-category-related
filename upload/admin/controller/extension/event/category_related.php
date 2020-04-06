@@ -1,5 +1,5 @@
 <?php
-class ControllerEventCategoryRelated extends Controller {
+class controllerExtensionEventCategoryRelated extends Controller {
 	
 	public function view(&$view, &$data, &$output) {// triggered before view category form
 		// build insert html
@@ -63,8 +63,8 @@ $('#product-related').delegate('.fa-minus-circle', 'click', function() {
 </script>
 EOF;
 		
-		$this->load->helper('simple_html_dom');
-		$html = str_get_html($output);
+		$html = new simple_html_dom();
+        $html->load($output, $lowercase = true, $stripRN = false, $defaultBRText = DEFAULT_BR_TEXT);
 		if($html === false) {
 			$this->log->write('Unable to parse html!');
 			return;

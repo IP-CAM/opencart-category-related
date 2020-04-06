@@ -70,12 +70,12 @@ class ControllerExtensionModuleCategoryRelated extends Controller {
 		// set up event handlers
 		$this->load->model('setting/event');
 		// Modify admin page
-		$this->model_setting_event->addEvent('category_related', 'admin/view/catalog/category_form/after', 'event/category_related/view');
-		$this->model_setting_event->addEvent('category_related', 'admin/model/catalog/category/addCategory/after', 'event/category_related/save');
-		$this->model_setting_event->addEvent('category_related', 'admin/model/catalog/category/editCategory/after', 'event/category_related/save');
-		$this->model_setting_event->addEvent('category_related', 'admin/model/catalog/category/deleteCategory/after', 'event/category_related/delete');
+		$this->model_setting_event->addEvent('category_related', 'admin/view/catalog/category_form/after', 'extension/event/category_related/view');
+		$this->model_setting_event->addEvent('category_related', 'admin/model/catalog/category/addCategory/after', 'extension/event/category_related/save');
+		$this->model_setting_event->addEvent('category_related', 'admin/model/catalog/category/editCategory/after', 'extension/event/category_related/save');
+		$this->model_setting_event->addEvent('category_related', 'admin/model/catalog/category/deleteCategory/after', 'extension/event/category_related/delete');
 		// Modify catalog page
-		$this->model_setting_event->addEvent('category_related', 'catalog/model/catalog/product/getProductRelated/after', 'event/category_related/productRelated');
+		$this->model_setting_event->addEvent('category_related', 'catalog/model/catalog/product/getProductRelated/after', 'extension/event/category_related/productRelated');
 	}
 	
 	public function uninstall() {
